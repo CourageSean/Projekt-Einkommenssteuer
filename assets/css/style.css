@@ -1,0 +1,7 @@
+#zvE2 {
+  visibility: hidden;
+}
+
+#verheiratet:checked ~ #zvE2 {
+  visibility: visible;
+}

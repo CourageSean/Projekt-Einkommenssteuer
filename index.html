@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt Einkommensteuer</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <form action="">
+    <label for="cars">Berechnungjahr:</label>
+    <select name="jahr" id="berechnungsjahr">
+      <option value="0">2021</option>
+      <option value="1">2020</option>
+      <option value="2">2019</option>
+    </select>
+
+    <h3>Persönliche Verhältnisse:</h3>
+
+    <input
+      type="radio"
+      id="verheiratet"
+      value="verheiratet"
+      name="verhältnisse"
+    />
+    <label for="verheiratet">verheiratet / verpartnert</label>
+
+    <input
+      type="radio"
+      id="alleinstehend"
+      value="alleinstehend"
+      name="verhältnisse"
+      checked
+    />
+    <label for="alleinstehend">alleinstehend</label> <br />
+    <br />
+
+    <h3>zu versteuerndes Einkommen (zvE):</h3>
+
+    <input id="zvE" type="text" value="0" />
+    <label for="zvE">Euro</label>
+
+    <input id="zvE2" type="text" value="0" />
+    <label for="zvE2">Person 2</label>
+
+    <input type="button" onclick="berechnen()" />
+  </form>
+
+  <body>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
