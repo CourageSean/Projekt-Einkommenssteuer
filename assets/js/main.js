@@ -86,3 +86,51 @@ function berechnen() {
       );
   }
 }
+
+
+//=======================================================================================================
+
+// funktion und variablen definieren
+const rechnen = function () {
+  let nettoZuBrutto = document.getElementById("nettoZuBrutto");
+  let bruttoZuNetto = document.getElementById("bruttoZuNetto");
+  let satz7 = document.getElementById("satz7");
+  let satz19 = document.getElementById("satz19");
+  let betragInput = document.getElementById("betragInput");
+  let ergebnis = document.getElementById("ergebnis");
+  let endPreis = document.getElementById("endPreis");
+
+  /*Ab hier modifiziere ich den eingegebenen Wert so dass wenn zb. 200.500,55 als Betrag 
+  eingegeben wurde das komma "," mit "." ausgetauscht wird und das erste "." entfernt wird,
+  damit ich mit dem input rechnen kann */
+
+  let a = betragInput.value;
+
+  let c = a.slice(-4);
+  let b = a.slice(0, -4);
+
+  c = c.replace(",", ".");
+  b = b.replace(".", "");
+  g = Number(b + c);
+
+  g = g / 2; //bsp. rechnung
+
+  //Hier überprüfe ich ob der eingebene Wert evt. Buchstaben enthält.
+  if (isNaN(g)) {
+    document.write("contains letters");
+  } else {
+    document.write("only numbers");
+  }
+
+  g = g.toFixed(2);
+
+  /* Ab hier füge ich wieder komma hinzu und replace das letzte "." mit "," um es als string 
+  auszugeben*/
+  g = g.replace(".", ",");
+
+  let h = g.slice(0, -6);
+  let i = g.slice(-6);
+
+  g = h + "." + i;
+  console.log(g);
+
