@@ -87,7 +87,6 @@ function berechnen() {
   }
 }
 
-
 //=======================================================================================================
 
 // funktion und variablen definieren
@@ -133,4 +132,21 @@ const rechnen = function () {
 
   g = h + "." + i;
   console.log(g);
+};
 
+//============= experiments ==========
+
+let section1 = document.getElementById("section1");
+let section2 = document.getElementById("section2");
+
+function experiment() {
+  section2.style.zIndex = "2";
+  section2.style.opacity = "1";
+}
+
+function closer() {
+  section2.style.opacity = "0";
+}
+function pIndex() {
+  section2.style.zIndex = "-2";
+}

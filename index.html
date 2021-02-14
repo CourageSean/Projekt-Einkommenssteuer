@@ -7,47 +7,68 @@
     <title>Projekt Einkommensteuer</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-
-  <form action="">
-    <label for="cars">Berechnungjahr:</label>
-    <select name="jahr" id="berechnungsjahr">
-      <option value="0">2021</option>
-      <option value="1">2020</option>
-      <option value="2">2019</option>
-    </select>
-
-    <h3>Persönliche Verhältnisse:</h3>
-
-    <input
-      type="radio"
-      id="verheiratet"
-      value="verheiratet"
-      name="verhältnisse"
-    />
-    <label for="verheiratet">verheiratet / verpartnert</label>
-
-    <input
-      type="radio"
-      id="alleinstehend"
-      value="alleinstehend"
-      name="verhältnisse"
-      checked
-    />
-    <label for="alleinstehend">alleinstehend</label> <br />
-    <br />
-
-    <h3>zu versteuerndes Einkommen (zvE):</h3>
-
-    <input id="zvE" type="text" value="0,00" />
-    <label for="zvE">Euro</label>
-
-    <input id="zvE2" type="text" value="0,00" />
-    <label for="zvE2">Person 2</label>
-
-    <input type="button" onclick="berechnen()" />
-  </form>
-
   <body>
+    <section id="section1">
+      <form action="">
+        <div id="berechnungsjahr-container">
+          <label for="cars">Berechnungjahr:</label>
+          <select name="jahr" id="berechnungsjahr">
+            <option value="0">2021</option>
+            <option value="1">2020</option>
+            <option value="2">2019</option>
+          </select>
+        </div>
+        <div id="verhältnisse-container">
+          <h3>Persönliche Verhältnisse:</h3>
+
+          <input
+            type="radio"
+            id="verheiratet"
+            value="verheiratet"
+            name="verhältnisse"
+          />
+          <label for="verheiratet">verheiratet / verpartnert</label>
+
+          <input
+            type="radio"
+            id="alleinstehend"
+            value="alleinstehend"
+            name="verhältnisse"
+            checked
+          />
+          <label for="alleinstehend">alleinstehend</label> <br />
+        </div>
+        <br />
+
+        <h3>zu versteuerndes Einkommen (zvE):</h3>
+
+        <input id="zvE" type="text" value="0,00" />
+        <label for="zvE">Euro</label>
+
+        <input id="zvE2" type="text" value="0,00" />
+        <label for="zvE2">Person 2</label>
+
+        <input type="button" onclick="berechnen()" />
+      </form>
+
+      <input type="button" value="experiment" onclick="experiment()" />
+      <input
+        id="close"
+        type="button"
+        value="Close"
+        onclick="
+        setTimeout(pIndex, 2000);"
+      />
+    </section>
+    <section id="section2">
+      <h1>SEAN COURAGE</h1>
+      <input
+        type="button"
+        value="Close"
+        onclick="closer();
+      setTimeout(pIndex, 1500);"
+      />
+    </section>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
