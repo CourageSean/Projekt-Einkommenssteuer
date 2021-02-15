@@ -1,145 +1,9 @@
-//hier habe ich die variablen definiert
-
-let berechnungsJahr = document.getElementById("berechnungsjahr");
-let zvE = document.getElementById("zvE");
-let zvE2 = document.getElementById("zvE2");
-let ESt = 0;
-let verheiratet = document.getElementById("verheiratet");
-let alleinstehend = document.getElementById("alleinstehend");
-
-console.log(zvE2.value);
-//hier habe ich eine funktion geschrieben die eine weitere enthält.
-function berechnen() {
-  let zvEn = Number(zvE.value);
-  //abfrage ob 1 oder 2 personen versteuert werden
-  verheiratet.checked
-    ? (zvEn = (zvEn + Number(zvE2.value)) / 2)
-    : (zvEn = zvEn);
-  //hier ist die noch nicht ausgeführte definierte parameter funktion
-  const berechner = function (a, b, c, e, f, h, i, j, k) {
-    if (zvEn <= a) {
-      ESt = 0;
-      console.log(ESt);
-    } else if (a + 1 <= zvEn && zvEn <= b) {
-      let y = (zvEn - a) / 10000;
-      ESt = (c * y + 1400) * y;
-      console.log(ESt);
-    } else if (b + 1 <= zvEn && zvEn <= e) {
-      let z = (zvEn - b) / 10000;
-      Est = (f * z + 2397) * z + h;
-      console.log(ESt);
-    } else if (e + 1 <= zvEn && zvEn <= i) {
-      Est = 0.42 * zvEn - j;
-      console.log(ESt);
-    } else if (zvEn >= i + 1) {
-      ESt = 0.45 * zvEn - k;
-      console.log(ESt);
-    } else {
-      console.log("something went wrong");
-    }
-  };
-  //dieser switch statement checkt welches jahr gewählt
-  //wurde und führt dann die oben definierte funktion mit argumenten aus.
-  console.log(zvE2.value);
-  switch (berechnungsJahr.value) {
-    case "0":
-      berechner(
-        9744.0,
-        14753,
-        995.21,
-        57918,
-        208.85,
-        950.96,
-        274612,
-        9136.63,
-        17374.99
-      );
-
-      break;
-
-    case "1":
-      berechner(
-        9408,
-        14532,
-        972.87,
-        57051,
-        212.02,
-        972.79,
-        270500,
-        8963.74,
-        17078.74
-      );
-
-      break;
-
-    case "2":
-      berechner(
-        9168,
-        14254,
-        980.14,
-        55960,
-        216.16,
-        965.58,
-        265356,
-        8780.9,
-        16740.68
-      );
-  }
-}
-
-//=======================================================================================================
-
-// funktion und variablen definieren
-const rechnen = function () {
-  let nettoZuBrutto = document.getElementById("nettoZuBrutto");
-  let bruttoZuNetto = document.getElementById("bruttoZuNetto");
-  let satz7 = document.getElementById("satz7");
-  let satz19 = document.getElementById("satz19");
-  let betragInput = document.getElementById("betragInput");
-  let ergebnis = document.getElementById("ergebnis");
-  let endPreis = document.getElementById("endPreis");
-
-  /*Ab hier modifiziere ich den eingegebenen Wert so dass wenn zb. 200.500,55 als Betrag 
-  eingegeben wurde das komma "," mit "." ausgetauscht wird und das erste "." entfernt wird,
-  damit ich mit dem input rechnen kann */
-
-  let a = betragInput.value;
-
-  let c = a.slice(-4);
-  let b = a.slice(0, -4);
-
-  c = c.replace(",", ".");
-  b = b.replace(".", "");
-  g = Number(b + c);
-
-  g = g / 2; //bsp. rechnung
-
-  //Hier überprüfe ich ob der eingebene Wert evt. Buchstaben enthält.
-  if (isNaN(g)) {
-    document.write("contains letters");
-  } else {
-    document.write("only numbers");
-  }
-
-  g = g.toFixed(2);
-
-  /* Ab hier füge ich wieder komma hinzu und replace das letzte "." mit "," um es als string 
-  auszugeben*/
-  g = g.replace(".", ",");
-
-  let h = g.slice(0, -6);
-  let i = g.slice(-6);
-
-  g = h + "." + i;
-  console.log(g);
-};
-
-//============= experiments ==========
+console.log("hello2");
 
 let section1 = document.getElementById("section1");
 let section2 = document.getElementById("section2");
-
-function experiment() {
+function experiment1() {
+  console.log("fuck");
   section2.style.zIndex = "2";
   section2.style.opacity = "1";
 }
@@ -149,4 +13,85 @@ function closer() {
 }
 function pIndex() {
   section2.style.zIndex = "-2";
+}
+function berechnung() {
+  //===========================================
+
+  let zvE1 = document.getElementById("zvE1");
+  let zvE2 = document.getElementById("zvE2");
+  let berechnungsJahr = document.getElementById("berechnungsjahr");
+  let verheiratet = document.getElementById("verheiratet");
+  let alleinstehend = document.getElementById("alleinstehend");
+  let Est;
+  let zvE;
+  let Est_2021;
+
+  const slice1 = function () {
+    let a1 = zvE1.value;
+    let b1 = a1.slice(0, -4);
+    let c1 = a1.slice(-4);
+
+    b1 = b1.replace(".", "");
+    c1 = c1.replace(",", ".");
+    let d1 = Number(b1 + c1);
+    return d1;
+  };
+
+  const slice2 = function () {
+    let a2 = zvE2.value;
+    let b2 = a2.slice(0, -4);
+    let c2 = a2.slice(-4);
+
+    b2 = b2.replace(".", "");
+    c2 = c2.replace(",", ".");
+    let d2 = Number(b2 + c2);
+    return d2;
+  };
+
+  if (alleinstehend.checked) {
+    zvE = slice1();
+  } else if (verheiratet.checked) {
+    zvE = (slice1() + slice2()) / 2;
+    console.log(zvE);
+  }
+
+  const hilfsFunktion = function (a, b, y1, c, z1, z2, d, e, f) {
+    if (zvE <= a) {
+      Est = 0;
+    } else if (a + 1 <= zvE && zvE <= b) {
+      y = (zvE - a - 1) / 10000;
+      Est = (y1 * y + 1400) * y;
+      console.log(Est);
+    } else if (b + 1 <= zvE && zvE <= c) {
+      z = (zvE - b) / 10000;
+      Est = (z1 * z + 2397) * z + z2;
+    } else if (c + 1 <= zvE && zvE <= d) {
+      Est = 0.42 * zvE - e;
+    } else if (d + 1 <= zvE) {
+      Est = 0.45 * zvE - f;
+      console.log("ja");
+    }
+  };
+
+  if (berechnungsJahr.value === "33") {
+    hilfsFunktion(
+      9744,
+      14753,
+      995.21,
+      57918,
+      208.85,
+      950.96,
+      274612,
+      9136.63,
+      17374.99
+    );
+
+    if (verheiratet.checked) {
+      Est = Est * 2;
+      console.log(Est, "Est für 2 Personen");
+    } else if (alleinstehend.checked) {
+      console.log(Est, "Est für 1 Person");
+    }
+  } else {
+  }
 }
