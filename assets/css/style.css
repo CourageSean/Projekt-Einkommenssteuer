@@ -1,9 +1,36 @@
-#zvE2 {
-  visibility: hidden;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+#zvE1 {
+  display: block;
+  margin: auto;
+  width: 15%;
+  height: 30px;
+  position: relative;
+  right: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
-#verheiratet:checked ~ #zvE2 {
-  visibility: visible;
+#zvE1:focus ~ #person1 {
+  color: #ccc;
+}
+
+#zvE2 {
+  display: block;
+  margin: auto;
+  width: 15%;
+  height: 35px;
+  position: relative;
+  left: 9%;
+  top: 13px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+#zvE2:focus ~ #person2 {
+  color: #ccc;
 }
 
 /* * {
@@ -14,36 +41,261 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  font-family: "Open Sans";
 }
 
 section:nth-of-type(1) {
   height: 100vh;
   width: 100vw;
-  background: lightgreen;
+  background: #fff;
 }
 
 section:nth-of-type(2) {
-  height: 90vh;
-  width: 90vw;
-  display: grid;
+  height: 100vh;
+  width: 100vw;
+
   place-items: center;
-  background: lightskyblue;
+  background: #fff;
   position: absolute;
   width: 100vw;
   top: 0;
   z-index: -2;
   opacity: 0;
-  transition: opacity 2.5s ease-out;
+  transition: opacity 0.8s ease-out;
 }
 
 #berechnungsjahr-container {
   padding: 20px;
-  border-bottom: solid #ccc;
-  border-top: #ccc solid;
+  border-bottom: solid #ccc 2px;
+  border-top: #ccc solid 2px;
   transform: translateY(20px);
 }
 
 #verhältnisse-container {
   text-align: center;
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+h4 {
+  color: rgb(114, 109, 109);
+}
+
+#verhältnisse-headline {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  top: -20px;
+  font-size: 0.9rem;
+}
+#verheiratet,
+#alleinstehend {
+  width: 60px;
+  height: 10px;
+  display: inline-block;
+  visibility: hidden;
+  left: 60%;
+}
+
+#label-wrapper {
+  padding-right: 30%;
+}
+
+#label-verheiratet {
+  padding-bottom: 20px;
+  position: relative;
+  right: 72px;
+  top: -25px;
+  color: rgb(82, 79, 79);
+}
+#label-alleinstehend {
+  position: relative;
+  right: 113px;
+  color: rgb(82, 79, 79);
+}
+
+#zvE-headline {
+  text-align: center;
+  padding-left: 3%;
+}
+
+#btn {
+  display: block;
+  margin: auto;
+  position: relative;
+  right: 10px;
+  top: 26px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: #ccc 2px solid;
+}
+#label-berechnungsjahr {
+  padding-left: 13%;
+  color: rgb(82, 79, 79);
+  font-weight: 600;
+}
+
+article {
+  width: 90vw;
+}
+
+#betrag-container1 div,
+#betrag-container2 div {
+  width: 30%;
+  height: 200px;
+  border: solid rgb(226, 224, 224) 2px;
+  margin: 35px;
+  border-radius: 6px;
+}
+
+#betrag-container1 div {
+  margin: auto;
+}
+
+#betrag-container2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 0;
+}
+
+#betrag-container1 {
+  padding-top: 50px;
+  position: relative;
+}
+
+img {
+  width: 45px;
+  margin: auto;
+  display: block;
+  padding-top: 20px;
+}
+
+h5 {
+  color: rgb(136, 132, 132);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 5px;
+}
+
+#eingabe-daten p {
+  font-size: 0.8rem;
+  color: rgb(136, 132, 132);
+  padding-left: 10px;
+  padding-bottom: 3px;
+}
+
+#eingabe-daten h5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+h6 {
+  background-color: rgb(245, 240, 240);
+  height: 45px;
+  margin: 0;
+  width: 100%;
+}
+#formel-farbe {
+  position: relative;
+  bottom: 0px;
+  margin-top: 50px;
+}
+
+#person1 {
+  position: relative;
+  top: -28px;
+  left: 54%;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+#person2 {
+  position: relative;
+  top: -20px;
+  left: 64%;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#curved {
+  position: relative;
+  height: 20px;
+  left: 28%;
+  width: 35%;
+
+  top: 35px;
+  border: none;
+  border-top: 2px solid rgb(238, 232, 232);
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+}
+#line {
+  display: inline-block;
+  position: absolute;
+  height: 36px;
+  width: 2px;
+  background: rgb(238, 232, 232);
+  left: 46%;
+}
+
+#formel-daten p {
+  font-size: 0.6rem;
+}
+/*=========================================================*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+}
+
+.switch #checkbox {
+  opacity: 1;
+  width: 0px;
+  height: 0px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+#checkbox:checked + .slider {
+  background-color: #ccc;
+}
+
+#checkbox:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+#checkbox:checked + .slider:before {
+  transform: translateX(33px);
+}
+
+#switch-wrapper {
+  transform: rotate(90deg);
+}
+
+/*========================*/
+path {
+  color: blue;
 }

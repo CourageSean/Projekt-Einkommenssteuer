@@ -11,65 +11,93 @@
     <section id="section1">
       <form action="">
         <div id="berechnungsjahr-container">
-          <label for="cars">Berechnungjahr:</label>
+          <label id="label-berechnungsjahr" for="cars">Berechnungsjahr:</label>
 
           <select name="jahr" id="berechnungsjahr">
-            <option value="33">2021</option>
-            <option value="1">2020</option>
-            <option value="2">2019</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
           </select>
         </div>
         <div id="verhältnisse-container">
-          <h3>Persönliche Verhältnisse:</h3>
+          <h4 id="verhältnisse-headline">Persönliche Verhältnisse:</h4>
 
-          <input
-            type="radio"
-            id="verheiratet"
-            value="verheiratet"
-            name="verhältnisse"
-          />
-          <label for="verheiratet">verheiratet / verpartnert</label>
-
-          <input
-            type="radio"
-            id="alleinstehend"
-            value="alleinstehend"
-            name="verhältnisse"
-            checked
-          />
-          <label for="alleinstehend">alleinstehend</label> <br />
-
-          <br />
-
-          <h3>zu versteuerndes Einkommen (zvE):</h3>
-
-          <input id="zvE1" type="text" placeholder="1,00" />
-          <label for="zvE1">Euro</label>
-
-          <input id="zvE2" type="text" placeholder="0,00" />
-          <label for="zvE2">Person 2</label>
-
-          <input type="button" onclick="berechnung()" />
+          <label id="switch-wrapper" class="switch">
+            <input id="checkbox" type="checkbox" />
+            <span onclick="test();theSwitch()" class="slider"></span>
+          </label>
+          <div id="label-wrapper">
+            <input
+              type="radio"
+              id="verheiratet"
+              value="verheiratet"
+              name="verhältnisse"
+            />
+            <label id="label-verheiratet" for="verheiratet"
+              >verheiratet / verpartnert</label
+            >
+            <br />
+            <input
+              type="radio"
+              id="alleinstehend"
+              value="alleinstehend"
+              name="verhältnisse"
+            />
+            <label id="label-alleinstehend" for="alleinstehend"
+              >alleinstehend</label
+            >
+          </div>
         </div>
+        <br />
+
+        <br />
+
+        <h4 id="zvE-headline">zu versteuerndes Einkommen (zvE):</h4>
+
+        <input id="zvE1" type="text" placeholder="Person 1" />
+        <label id="person1" for="zvE2">€</label>
+        <input id="zvE2" type="text" placeholder="Person 2" />
+        <label id="person2" for="zvE2">€</label>
+
+        <input
+          id="btn"
+          type="button"
+          value="Berechnen"
+          onclick="berechnung();experiment1()"
+        />
       </form>
 
-      <input type="button" value="experiment" onclick="experiment1()" />
-      <input
-        id="close"
-        type="button"
-        value="Close"
-        onclick="
-        setTimeout(pIndex, 2000);"
-      />
+      <!-- <input type="button" value="experiment" onclick="experiment1()" /> -->
     </section>
     <section id="section2">
-      <h1>SEAN COURAGE</h1>
-      <input
-        type="button"
-        value="Close"
-        onclick="closer();
-      setTimeout(pIndex, 1500);"
-      />
+      <article id="betrag-container1">
+        <div>
+          <img src="assets/images/icons8-tax-64.png" alt="" />
+          <h5>Betrag</h5>
+          <input
+            type="button"
+            value="Close"
+            onclick="closer();
+        setTimeout(pIndex, 1500);"
+          />
+        </div>
+      </article>
+      <span id="line"></span>
+      <div id="curved"></div>
+      <article id="betrag-container2">
+        <div id="eingabe-daten">
+          <h5>Ihre Eingabedaten</h5>
+          <p>zu versteuerndes Einkommen (zvE):</p>
+          <p>Persönliche Verhältnisse:</p>
+          <p>Berechnungsjahr:</p>
+          <h6></h6>
+        </div>
+        <div id="formel-daten">
+          <h5>Formel nach §32a EStG</h5>
+
+          <h6 id="formel-farbe"></h6>
+        </div>
+      </article>
     </section>
     <script src="assets/js/main.js"></script>
   </body>
