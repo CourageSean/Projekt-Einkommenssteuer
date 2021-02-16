@@ -117,6 +117,7 @@ function berechnung() {
       betragText.innerHTML = Est + " €";
       console.log(Est, "Est für 2 Personen");
     } else {
+      persönlichTxt.innerHTML = "alleinstehend";
       console.log(Est, "Est für 1 Person");
       changer();
       betragText.innerHTML = Est + " €";
@@ -142,6 +143,7 @@ function berechnung() {
       betragText.innerHTML = Est + " €";
       console.log(Est, "Est für 2 Personen 2020");
     } else {
+      persönlichTxt.innerHTML = "alleinstehend";
       console.log(Est, "Est für 1 Person 2020");
       changer();
       betragText.innerHTML = Est + " €";
@@ -167,6 +169,7 @@ function berechnung() {
       betragText.innerHTML = Est + " €";
       console.log(Est, "Est für 2 Personen 2020");
     } else {
+      persönlichTxt.innerHTML = "alleinstehend";
       console.log(Est, "Est für 1 Person 2019");
       changer();
       betragText.innerHTML = Est + " €";
