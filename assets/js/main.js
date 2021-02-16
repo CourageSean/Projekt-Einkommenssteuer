@@ -5,6 +5,12 @@ let section1 = document.getElementById("section1");
 let section2 = document.getElementById("section2");
 let person1 = document.getElementById("person1");
 let person2 = document.getElementById("person2");
+let betragText = document.getElementById("betrag-txt");
+let a11;
+let b11;
+let persönlichTxt = document.getElementById("persönlich-txt");
+let berechnungsJahrTxt = document.getElementById("berechnungsj-txt");
+let zvEtxt = document.getElementById("zvE-txt");
 
 function experiment1() {
   console.log("fuck");
@@ -52,6 +58,15 @@ function berechnung() {
     return d2;
   };
 
+  changer = () => {
+    Est = Est.toFixed(2);
+    Est = Est.replace(".", ",");
+    a11 = Est.slice(0, -6);
+    b11 = Est.slice(-6);
+    Est = a11 + "." + b11;
+    return Est;
+  };
+
   if (alleinstehend.checked) {
     zvE = slice1();
   } else if (verheiratet.checked) {
@@ -78,6 +93,9 @@ function berechnung() {
   };
 
   if (berechnungsJahr.value === "2021") {
+    berechnungsJahrTxt.innerHTML = "   2021";
+    persönlichTxt.innerHTML;
+    zvEtxt.innerHTML = Number(zvE1.value) + Number(zvE2.value) + " €";
     hilfsFunktion(
       9744,
       14753,
@@ -91,12 +109,21 @@ function berechnung() {
     );
 
     if (verheiratet.checked) {
+      persönlichTxt.innerHTML = "verheiratet/ verpartnert";
+      console.log(Est * 2);
+
       Est = Est * 2;
+      changer();
+      betragText.innerHTML = Est + " €";
       console.log(Est, "Est für 2 Personen");
     } else {
       console.log(Est, "Est für 1 Person");
+      changer();
+      betragText.innerHTML = Est + " €";
     }
   } else if (berechnungsJahr.value === "2020") {
+    berechnungsJahrTxt.innerHTML = " 2020";
+    zvEtxt.innerHTML = Number(zvE1.value) + Number(zvE2.value) + " €";
     hilfsFunktion(
       9408,
       14532,
@@ -109,12 +136,42 @@ function berechnung() {
       17078.74
     );
     if (verheiratet.checked) {
+      persönlichTxt.innerHTML = "verheiratet/ verpartnert";
       Est = Est * 2;
+      changer();
+      betragText.innerHTML = Est + " €";
       console.log(Est, "Est für 2 Personen 2020");
     } else {
       console.log(Est, "Est für 1 Person 2020");
+      changer();
+      betragText.innerHTML = Est + " €";
     }
-  }else if(berechnungsJahr.value === "2019")
+  } else if (berechnungsJahr.value === "2019") {
+    berechnungsJahrTxt.innerHTML = "   2019";
+    zvEtxt.innerHTML = Number(zvE1.value) + Number(zvE2.value) + " €";
+    hilfsFunktion(
+      9168,
+      14254,
+      980.14,
+      55960,
+      216.16,
+      965.58,
+      265326,
+      8780.9,
+      16740.68
+    );
+    if (verheiratet.checked) {
+      persönlichTxt.innerHTML = "verheiratet/ verpartnert";
+      Est = Est * 2;
+      changer();
+      betragText.innerHTML = Est + " €";
+      console.log(Est, "Est für 2 Personen 2020");
+    } else {
+      console.log(Est, "Est für 1 Person 2019");
+      changer();
+      betragText.innerHTML = Est + " €";
+    }
+  }
 }
 
 //===================================
@@ -135,8 +192,8 @@ theSwitch = () => {
     zvE2.style.visibility = "visible";
     person1.style.visibility = "visible";
     person2.style.visibility = "visible";
-    zvE1.placeholder = "Person 1";
-    zvE2.placeholder = "Person 2";
+    zvE1.placeholder = "1. Person";
+    zvE2.placeholder = "2. Person";
   } else if (!checkBox.checked) {
     alleinstehend.checked = true;
     verheiratetLabel.style.color = "rgb(82, 79, 79)";
@@ -148,3 +205,5 @@ theSwitch = () => {
     zvE2.placeholder = "0,00 €";
   }
 };
+
+//===========================================

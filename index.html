@@ -18,6 +18,12 @@
             <option value="2020">2020</option>
             <option value="2019">2019</option>
           </select>
+          <img
+            id="ministerium"
+            src="assets/images/224px-BMF_Logo.svg.png"
+            alt=""
+          />
+          Einkommensteuer-Berechnung
         </div>
         <div id="verhältnisse-container">
           <h4 id="verhältnisse-headline">Persönliche Verhältnisse:</h4>
@@ -32,6 +38,7 @@
               id="verheiratet"
               value="verheiratet"
               name="verhältnisse"
+              checked
             />
             <label id="label-verheiratet" for="verheiratet"
               >verheiratet / verpartnert</label
@@ -54,9 +61,9 @@
 
         <h4 id="zvE-headline">zu versteuerndes Einkommen (zvE):</h4>
 
-        <input id="zvE1" type="text" placeholder="Person 1" />
+        <input id="zvE1" type="text" placeholder="1. Person" />
         <label id="person1" for="zvE2">€</label>
-        <input id="zvE2" type="text" placeholder="Person 2" />
+        <input id="zvE2" type="text" placeholder="2. Person" />
         <label id="person2" for="zvE2">€</label>
 
         <input
@@ -70,11 +77,15 @@
       <!-- <input type="button" value="experiment" onclick="experiment1()" /> -->
     </section>
     <section id="section2">
+      <div id="line-top"></div>
       <article id="betrag-container1">
         <div>
           <img src="assets/images/icons8-tax-64.png" alt="" />
-          <h5>Betrag</h5>
+          <h5>Einkommensteuer</h5>
+          <h2 id="betrag-txt"></h2>
+          <img id="cls" src="assets/images/close.png" alt="" />
           <input
+            id="close-btn"
             type="button"
             value="Close"
             onclick="closer();
@@ -87,17 +98,30 @@
       <article id="betrag-container2">
         <div id="eingabe-daten">
           <h5>Ihre Eingabedaten</h5>
-          <p>zu versteuerndes Einkommen (zvE):</p>
-          <p>Persönliche Verhältnisse:</p>
-          <p>Berechnungsjahr:</p>
+          <p>zu versteuerndes Einkommen (zvE): <span id="zvE-txt"></span></p>
+          <p>Persönliche Verhältnisse: <span id="persönlich-txt"></span></p>
+          <p>Berechnungsjahr: <span id="berechnungsj-txt"></span></p>
           <h6></h6>
         </div>
         <div id="formel-daten">
           <h5>Formel nach §32a EStG</h5>
+          <p>ESt = 0</p>
+          <p>ESt = (995,21 * y + 1.400) * y ,/=> y = (zvE - 9.744) / 10.000</p>
+          <p>ESt = 0,42 * zvE - 9.136,63</p>
+          <p>ESt = 0,45 * zvE - 17.374,99</p>
 
+          <p>
+            ESt = (208,85 * z + 2.397) * z + 950,96, z =(zvE - 14.753) / 10.000
+          </p>
+          <p></p>
           <h6 id="formel-farbe"></h6>
         </div>
       </article>
+      <img
+        id="ministerium2"
+        src="assets/images/224px-BMF_Logo.svg.png"
+        alt=""
+      />
     </section>
     <script src="assets/js/main.js"></script>
   </body>

@@ -13,7 +13,7 @@
 }
 
 #zvE1:focus ~ #person1 {
-  color: #ccc;
+  color: rgb(109, 106, 106);
 }
 
 #zvE2 {
@@ -30,9 +30,17 @@
 }
 
 #zvE2:focus ~ #person2 {
+  color: rgb(109, 106, 106);
+}
+#zvE1::-webkit-input-placeholder {
+  letter-spacing: 7px;
   color: #ccc;
 }
 
+#zvE2::-webkit-input-placeholder {
+  letter-spacing: 7px;
+  color: #ccc;
+}
 /* * {
   margin: 0;
   padding: 0;
@@ -66,8 +74,8 @@ section:nth-of-type(2) {
 
 #berechnungsjahr-container {
   padding: 20px;
-  border-bottom: solid #ccc 2px;
-  border-top: #ccc solid 2px;
+  border-bottom: solid #ccc 1.5px;
+  border-top: #ccc solid 1.5px;
   transform: translateY(20px);
 }
 
@@ -80,7 +88,7 @@ section:nth-of-type(2) {
 }
 
 h4 {
-  color: rgb(114, 109, 109);
+  color: rgb(172, 165, 165);
 }
 
 #verhältnisse-headline {
@@ -108,12 +116,14 @@ h4 {
   position: relative;
   right: 72px;
   top: -25px;
-  color: rgb(82, 79, 79);
+  color: rgb(110, 106, 106);
+  font-size: 0.9rem;
 }
 #label-alleinstehend {
   position: relative;
   right: 113px;
-  color: rgb(82, 79, 79);
+  color: rgb(110, 106, 106);
+  font-size: 0.9rem;
 }
 
 #zvE-headline {
@@ -130,6 +140,8 @@ h4 {
   padding: 15px 25px;
   border-radius: 5px;
   border: #ccc 2px solid;
+  color: rgb(145, 142, 142);
+  cursor: pointer;
 }
 #label-berechnungsjahr {
   padding-left: 13%;
@@ -192,7 +204,7 @@ h5 {
 }
 
 h6 {
-  background-color: rgb(245, 240, 240);
+  background-color: rgb(194, 187, 187);
   height: 45px;
   margin: 0;
   width: 100%;
@@ -200,22 +212,25 @@ h6 {
 #formel-farbe {
   position: relative;
   bottom: 0px;
-  margin-top: 50px;
+  top: -6px;
+  margin-top: 6px;
 }
 
 #person1 {
   position: relative;
-  top: -28px;
-  left: 54%;
+  top: -45px;
+  left: 56.5%;
   font-size: 0.8rem;
   font-weight: 600;
+  color: rgb(161, 153, 153);
 }
 #person2 {
   position: relative;
-  top: -20px;
-  left: 64%;
+  top: -37px;
+  left: 67%;
   font-size: 0.8rem;
   font-weight: 600;
+  color: rgb(161, 153, 153);
 }
 
 #curved {
@@ -241,6 +256,65 @@ h6 {
 
 #formel-daten p {
   font-size: 0.6rem;
+  padding-left: 15px;
+}
+
+#betrag-txt {
+  text-align: center;
+  letter-spacing: 5px;
+  color: rgb(131, 127, 127);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+#cls {
+  position: absolute;
+  top: 7px;
+  left: 32%;
+  background: #fff;
+}
+#close-btn {
+  position: absolute;
+  top: 29px;
+  left: 32%;
+  height: 40px;
+  width: 43px;
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#zvE-txt,
+#berechnungsj-txt,
+#persönlich-txt {
+  color: #000;
+  font-weight: 600;
+}
+
+select {
+  width: 100px;
+  margin-right: 35px;
+  text-align: center;
+}
+#line-top {
+  position: absolute;
+  width: 100vw;
+  height: 40px;
+  border: none;
+
+  margin-top: 50px;
+}
+#ministerium {
+  position: absolute;
+  width: 150px;
+  bottom: -450px;
+  right: 10%;
+}
+#ministerium2 {
+  position: absolute;
+  width: 150px;
+  bottom: 60px;
+  right: 10%;
 }
 /*=========================================================*/
 
