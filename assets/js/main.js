@@ -121,6 +121,7 @@ function berechnung() {
       console.log(Est, "Est für 1 Person");
       changer();
       betragText.innerHTML = Est + " €";
+      zvEtxt.innerHTML = Number(zvE1.value);
     }
   } else if (berechnungsJahr.value === "2020") {
     berechnungsJahrTxt.innerHTML = " 2020";
@@ -147,6 +148,7 @@ function berechnung() {
       console.log(Est, "Est für 1 Person 2020");
       changer();
       betragText.innerHTML = Est + " €";
+      zvEtxt.innerHTML = Number(zvE1.value);
     }
   } else if (berechnungsJahr.value === "2019") {
     berechnungsJahrTxt.innerHTML = "   2019";
@@ -173,6 +175,7 @@ function berechnung() {
       console.log(Est, "Est für 1 Person 2019");
       changer();
       betragText.innerHTML = Est + " €";
+      zvEtxt.innerHTML = Number(zvE1.value);
     }
   }
 }
